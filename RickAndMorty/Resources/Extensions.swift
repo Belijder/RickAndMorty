@@ -28,5 +28,15 @@ extension UIView {
             bottomAnchor.constraint(equalTo: superView.bottomAnchor)
         ])
     }
+    
+    func pinToSaveArea(of superView: UIView) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor),
+            leadingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.leadingAnchor),
+            trailingAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.trailingAnchor),
+            bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
 }
 
