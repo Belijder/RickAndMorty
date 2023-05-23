@@ -46,6 +46,7 @@ final class RMTabBarController: UITabBarController {
         
         for nav in [nav1, nav2, nav3, nav4] {
             nav.navigationBar.prefersLargeTitles = true
+            nav.navigationBar.tintColor = .systemYellow
         }
         
         setViewControllers([nav1, nav2, nav3, nav4],

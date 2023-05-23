@@ -22,12 +22,8 @@ final class RMCharactersViewController: UIViewController, RMCharacterListViewDel
     private func setUpView() {
         characterListView.delegate = self
         view.addSubview(characterListView)
-        NSLayoutConstraint.activate([
-            characterListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            characterListView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            characterListView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
-            characterListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
-        ])
+        characterListView.pinToSaveArea(of: view)
+        addSearchButton()
     }
     
     // MARK: - RMCharacterListViewDelegate
@@ -36,6 +32,17 @@ final class RMCharactersViewController: UIViewController, RMCharacterListViewDel
         let detailVC = RMCharacterDetailViewController(viewModel: viewModel)
         detailVC.navigationItem.largeTitleDisplayMode = .never
         navigationController?.pushViewController(detailVC, animated: true)
+    }
+    
+    
+    private func addSearchButton() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
+    }
+    
+    @objc private func didTapSearch() {
+        let destVC = RMSearchViewController(config: RMSearchViewController.Config(type: .character))
+        destVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(destVC, animated: true)
     }
 }
 
