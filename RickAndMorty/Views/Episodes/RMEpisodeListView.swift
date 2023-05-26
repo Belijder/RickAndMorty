@@ -17,12 +17,7 @@ final class RMEpisodeListView: UIView {
     
     private let viewModel = RMEpisodeListViewViewModel()
     
-    private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.hidesWhenStopped = true
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
-    }()
+    private let spinner = Utilities.createSpinner()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

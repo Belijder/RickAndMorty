@@ -13,15 +13,8 @@ final class RMCharacterDetailView: UIView {
     
     public var collectionView: UICollectionView?
     private let viewModel: RMCharacterDetailViewViewModel
-    
-    private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.hidesWhenStopped = true
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
-    }()
+    private let spinner = Utilities.createSpinner()
 
-    
     // MARK: - Initialization
     init(frame: CGRect, viewModel: RMCharacterDetailViewViewModel) {
         self.viewModel = viewModel

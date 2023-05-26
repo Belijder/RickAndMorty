@@ -27,12 +27,7 @@ final class RMEpisodeDetailView: UIView {
     }
     
     private var collectionView: UICollectionView?
-    private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView()
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        spinner.hidesWhenStopped = true
-        return spinner
-    }()
+    private let spinner = Utilities.createSpinner()
     
     
     // MARK: - Initialization

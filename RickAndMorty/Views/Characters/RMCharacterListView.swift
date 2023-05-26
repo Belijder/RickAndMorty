@@ -17,12 +17,7 @@ final class RMCharacterListView: UIView {
     
     private let viewModel = RMCharacterListViewViewModel()
     
-    private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .large)
-        spinner.hidesWhenStopped = true
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
-    }()
+    private let spinner = Utilities.createSpinner()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

@@ -10,12 +10,7 @@ import UIKit
 class RMFooterLoadingCollectionReusableView: UICollectionReusableView {
     static let identifier = "RMFooterLoadingCollectionReusableView"
     
-    private let spinner: UIActivityIndicatorView = {
-        let spinner = UIActivityIndicatorView(style: .medium)
-        spinner.hidesWhenStopped = true
-        spinner.translatesAutoresizingMaskIntoConstraints = false
-        return spinner
-    }()
+    private let spinner = Utilities.createSpinner()
     
     override init(frame: CGRect) {
         super.init(frame: frame)

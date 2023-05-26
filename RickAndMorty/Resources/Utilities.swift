@@ -5,7 +5,7 @@
 //  Created by Jakub Zajda on 23/05/2023.
 //
 
-import Foundation
+import UIKit
 
 enum Utilities {
     static var dateFormatter: DateFormatter = {
@@ -22,4 +22,12 @@ enum Utilities {
         formatter.timeZone = .current
         return formatter
     }()
+    
+    
+    static func createSpinner() -> UIActivityIndicatorView {
+        let spinner = UIActivityIndicatorView(style: .medium)
+        spinner.hidesWhenStopped = true
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }
 }
