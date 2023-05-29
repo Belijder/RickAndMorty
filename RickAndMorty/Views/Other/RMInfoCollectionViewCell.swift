@@ -1,5 +1,5 @@
 //
-//  RMEpisodeInfoCollectionViewCell.swift
+//  RMInfoCollectionViewCell.swift
 //  RickAndMorty
 //
 //  Created by Jakub Zajda on 22/05/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RMEpisodeInfoCollectionViewCell: UICollectionViewCell {
+class RMInfoCollectionViewCell: UICollectionViewCell {
     static let cellIdentifier = "RMEpisodeInfoCollectionViewCell"
     
     private let titleLabel: UILabel = {
@@ -69,7 +69,7 @@ class RMEpisodeInfoCollectionViewCell: UICollectionViewCell {
     
     
     
-    func configure(with viewModel: RMEpisodeInfoCollectionViewCellViewModel) {
+    func configure(with viewModel: RMInfoCollectionViewCellViewModel) {
         titleLabel.text = viewModel.title
         valueLabel.text = viewModel.value
     }

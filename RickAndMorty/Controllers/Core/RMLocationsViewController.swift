@@ -21,6 +21,7 @@ final class RMLocationsViewController: UIViewController {
         view.addSubview(locationsView)
         locationsView.pinToSaveArea(of: view)
         viewModel.delegate = self
+        locationsView.delegate = self
         viewModel.fetchInitialLocations()
     }
     
@@ -35,8 +36,18 @@ final class RMLocationsViewController: UIViewController {
     }
 }
 
+// MARK: - ViewModelDelegate
 extension RMLocationsViewController: RMLocationsListViewViewModelDelegate {
     func didFetchInitialLocations() {
         locationsView.configure(with: viewModel)
+    }
+}
+
+// MARK: - ViewDelegate
+extension RMLocationsViewController: RMLocationsListViewDelegate {
+    func rmLocationListView(_ locationListView: RMLocationsListView, didSelect location: RMLocation) {
+        let destVC = RMLocationDetailViewController(location: location)
+        destVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(destVC, animated: true)
     }
 }

@@ -21,7 +21,7 @@ final class RMEpisodeDetailViewViewModel {
     }
     
     enum SectionType {
-        case information(viewModels: [RMEpisodeInfoCollectionViewCellViewModel])
+        case information(viewModels: [RMInfoCollectionViewCellViewModel])
         case characters(viewModels: [RMCharacterCollectionViewCellViewModel])
     }
     
@@ -53,7 +53,7 @@ final class RMEpisodeDetailViewViewModel {
     }
     
     
-    func character(at index: Int) -> RMCharacter? {
+    public func character(at index: Int) -> RMCharacter? {
         return dataTuple?.characters[index]
     }
     
